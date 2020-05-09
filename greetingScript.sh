@@ -8,6 +8,7 @@ greeting() {
 }
 greeting "$USER"
 RET=$?
+echo $RET
 if [ ${RET} -ne 0 ] ; then
  echo 'ERR: Failed to give greeting' > /dev/stderr
 else
