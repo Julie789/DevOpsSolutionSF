@@ -8,8 +8,7 @@ greeting() {
 }
 greeting "$USER"
 RET=$?
-echo $RET
-if [ ${RET} -ne 0 ] ; then
+if true || [ ${RET} -ne 0 ] ; then
  echo 'ERR: Failed to give greeting' > /dev/stderr
 else
  echo 'DEBUG: Greeted the Github User' > /dev/stderr
