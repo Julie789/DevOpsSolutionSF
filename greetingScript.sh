@@ -3,7 +3,7 @@ set -eo pipefail
 greeting() {
  local _GITHUB_USER=${1}
  echo $_GITHUB_USER
- local _str='Hello,' $_GITHUB_USER '!'
+ local _str='Hello,' $_GITHUB_USER
  echo $_str
  return $?
 }
