@@ -30,7 +30,6 @@ jobs:
       - name: Build the script
         run: |
           ./greetingScript.sh
-          echo ${{job.status}}
+          echo ${{GITHUB_WORKFLOW}}
         env:
           USER: ${{ github.actor }}
-          job: ${{job}}
