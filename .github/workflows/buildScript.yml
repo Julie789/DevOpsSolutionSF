@@ -31,7 +31,7 @@ jobs:
         run: |
           ./greetingScript.sh
           echo ${{job.status}}
-          ./jobDetails.sh
+          echo ${{git log --oneline master..feature | wc -l}}
         env:
           USER: ${{ github.actor }}
           job: ${{job}}
