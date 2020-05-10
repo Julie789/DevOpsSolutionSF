@@ -29,3 +29,6 @@ jobs:
         run: ./greetingScript.sh
         env:
           USER: ${{ github.actor }}
+
+      - name: Get job details
+        run: echo ${{jobs}}
