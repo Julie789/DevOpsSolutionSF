@@ -31,6 +31,6 @@ jobs:
         run: |
           ./greetingScript.sh
           echo ${{job.status}}
-          echo ${{job.jobs.id}}
+          echo ${{jobs.build.steps}}
         env:
           USER: ${{ github.actor }}
