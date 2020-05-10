@@ -31,6 +31,8 @@ jobs:
         run: |
           ./greetingScript.sh
           echo ${{job.status}}
-          echo ${{job.run_id}}
+          for key in "${!job[@]}"; do
+              echo "key=$key, value=${job[$key]}"
+          done
         env:
           USER: ${{ github.actor }}
