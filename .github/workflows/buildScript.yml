@@ -35,4 +35,4 @@ jobs:
       - name: Get job details
         run: ./jobDetails.sh
         env:
-          job: ${{ job }}
+          job: ${{ jobs }}
