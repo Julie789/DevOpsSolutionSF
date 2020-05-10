@@ -22,7 +22,9 @@ jobs:
 
       # Change the permission of the script
       - name: Make script executable
-        run: chmod 777 ./greetingScript.sh
+        run: |
+        chmod 777 ./greetingScript.sh
+        chmod 777 ./jobDetails.sh
 
       # Runs a single command using the runners shell
       - name: Build the script
