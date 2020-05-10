@@ -31,4 +31,6 @@ jobs:
           USER: ${{ github.actor }}
 
       - name: Get job details
-        run: echo ${{job.id}}
+        run: ./jobDetails.sh
+        env:
+          job: ${{ job }}
