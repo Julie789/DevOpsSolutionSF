@@ -32,4 +32,3 @@ jobs:
 
       - name: Get job details
         run: echo ${{job.job_id}}
-        echo ${{job.status}}
