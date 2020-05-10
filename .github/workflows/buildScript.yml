@@ -30,6 +30,9 @@ jobs:
       - name: Build the script
         run: |
           ./greetingScript.sh
-          echo ${{GITHUB_WORKFLOW}}
+          echo ${{github.workflow}}
+          echo ${{github.job}}
+          echo ${{github.run_id}}
+          echo ${{github.repository_owner}}
         env:
           USER: ${{ github.actor }}
