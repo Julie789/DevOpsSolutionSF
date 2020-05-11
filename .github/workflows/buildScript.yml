@@ -59,7 +59,7 @@ jobs:
       - name: Build the script
         run: ./jobDetails.sh
         env:
-          commits: ${{ github.event.commits }}
-          commits_url: ${{ github.event.commits_url }}
+          commits: ${{ github.event.pull_request.commits }}
+          commits_url: ${{ github.event.pull_request.commits_url }}
           workflow: ${{ github.workflow }}
           workspace: ${{ github.workspace }}
