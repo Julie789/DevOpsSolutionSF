@@ -8,7 +8,8 @@ jobInfo() {
  echo $_workspace_str
  return $?
 }
-RET=jobInfo "$commits" "$commits_url" "$workflow" "$workspace"
+jobInfo "$commits" "$commits_url" "$workflow" "$workspace"
+RET=$?
 if [ ${RET} -ne 0 ] ; then
  echo 'ERR: Failed to give job details' > /dev/stderr
 else
