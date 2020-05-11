@@ -33,7 +33,7 @@ jobs:
         env:
           USER: ${{ github.actor }}
 
-  one:
+  job:
     runs-on: ubuntu-16.04
     steps:
       - name: Dump GitHub context
@@ -44,11 +44,22 @@ jobs:
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
         run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
       - name: Dump runner context
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: echo "$RUNNER_CONTEXT"
+
+      - uses: actions/checkout@v2
+
+      # Change the permission of the script
+      - name: Make script executable
+        run: chmod 777 ./jobDetails.sh
+
+      # Runs a single command using the runners shell
+      - name: Build the script
+        run: ./jobDetails.sh
+        env:
+          commits: ${{ github.commits }}
+          commits_url: ${{ github.commits_url }}
+          workflow: ${{ github.workflow }}
+          workspace: ${{ github.workspace }}
